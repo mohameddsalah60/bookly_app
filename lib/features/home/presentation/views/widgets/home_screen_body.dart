@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'custom_app_bar.dart';
+import 'custom_list_view_item.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -10,6 +11,7 @@ class HomeScreenBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
+        CustomListViewItem(),
       ],
     );
   }
