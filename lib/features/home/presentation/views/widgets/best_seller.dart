@@ -17,7 +17,7 @@ class BestSeller extends StatelessWidget {
             'Best Seller',
             style: Styles.styleSemiBold22,
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 20),
           BestSellerListViewItem(),
         ],
       ),

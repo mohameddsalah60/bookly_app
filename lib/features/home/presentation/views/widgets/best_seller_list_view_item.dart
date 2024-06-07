@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'best_seller_book_rating.dart';
+
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
 
@@ -28,29 +30,39 @@ class BestSellerListViewItem extends StatelessWidget {
           const SizedBox(
             width: 35,
           ),
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Harry Potter and the Goblet of Fire',
-                  style: Styles.styleRegular20,
-                  maxLines: 2,
+                SizedBox(
+                  width: MediaQuery.sizeOf(context).width * .5,
+                  child: const Text(
+                    'Harry Potter and the Goblet of Fire',
+                    style: Styles.styleRegular20,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                Text(
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
                   'J.K. Rowling',
                   style: Styles.styleMeduim14,
                 ),
-                SizedBox(
-                  height: 8,
+                const SizedBox(
+                  height: 3,
                 ),
-                Row(
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       '19.99 €',
                       style: Styles.styleBold20,
                     ),
+                    Spacer(),
+                    BestSellerBookRating(),
                   ],
                 )
               ],
