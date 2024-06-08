@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import 'best_seller_book_rating.dart';
+import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -66,7 +66,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         style: Styles.styleBold20,
                       ),
                       Spacer(),
-                      BestSellerBookRating(),
+                      BookRating(),
                     ],
                   )
                 ],
