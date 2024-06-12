@@ -30,7 +30,10 @@ class BookDetailesViewBody extends StatelessWidget {
                     vertical: 40,
                     horizontal: width * .2,
                   ),
-                  child: const CustomBookImage(),
+                  child: const CustomBookImage(
+                    imageUrl:
+                        'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+                  ),
                 ),
                 Text(
                   'The Jungle Book',
