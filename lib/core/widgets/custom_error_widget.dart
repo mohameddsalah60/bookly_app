@@ -9,6 +9,7 @@ class CustomErrorWidget extends StatelessWidget {
     return Text(
       errorMessage,
       style: Styles.styleBold20,
+      textAlign: TextAlign.center,
     );
   }
 }
