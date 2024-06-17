@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,8 +11,8 @@ import 'custombook_detailes_app_bar.dart';
 import 'similar_books_list_view.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
-  const BookDetailesViewBody({super.key});
-
+  const BookDetailesViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.sizeOf(context).width;
@@ -30,22 +31,27 @@ class BookDetailesViewBody extends StatelessWidget {
                     vertical: 40,
                     horizontal: width * .2,
                   ),
-                  child: const CustomBookImage(
-                    imageUrl:
-                        'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+                  child: CustomBookImage(
+                    imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? "",
                   ),
                 ),
                 Text(
-                  'The Jungle Book',
+                  bookModel.volumeInfo.title!,
+                  textAlign: TextAlign.center,
                   style: Styles.styleSemiBold22.copyWith(
                     fontSize: 30,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(
                   height: 6,
                 ),
                 Text(
-                  'Rudyard Kipling',
+                  bookModel.volumeInfo.authors?[0] ?? '',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 3,
                   style: Styles.styleMeduim14.copyWith(
                     fontSize: 18,
                     fontStyle: FontStyle.italic,
